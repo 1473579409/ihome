@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package getImg;
+
+option go_package = "./proto;getImg";
+
+service GetImg {
+	rpc MicroGetImg(Request) returns (Response) {}
+}
+
+
+
+message Request {
+	string uuid = 1;
+}
+
+message Response {
+	string errno = 1;
+	string errmsg = 2;
+	//二进制的图片类型  byte
+	bytes data = 3;
+}
+
